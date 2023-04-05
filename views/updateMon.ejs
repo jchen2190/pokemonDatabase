@@ -12,7 +12,7 @@
     <a href="/oneMon/<%=pokemon.Name%>">Back to <%=pokemon.Name%></a>
 
     <!-- This form sends data to the back-end when it is submitted -->
-    <form action="/api/pokemon/updateOnePokemon/<%=pokemon.Name%>" method="post">
+    <form action="/api/pokemon/updateOnePokemon/<%=pokemon.Name%>?_method=PUT" method="post">
 
         <!-- Each name attribute pertains to how it's captured in JSON format -->
         <label for="PokedexNo">PokedexNo</label>
