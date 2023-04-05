@@ -6,7 +6,7 @@ const {
     renderOnePokemonPage,
     renderCreatePokemonForm,
     renderUpdatePokemonForm
-} = require("../../controllers/client/viewController")
+} = require("../../controllers/client/viewController");
 
 // localhost:8080/...
 router.get("/", getIndexPage);

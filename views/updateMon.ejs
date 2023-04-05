@@ -9,7 +9,7 @@
 <body>
     <h1>Fill out the form to update a new Pokemon</h1>
     <br>
-    <a href="/oneMon<%=pokemon.Name%>">Back to <%=pokemon.Name%></a>
+    <a href="/oneMon/<%=pokemon.Name%>">Back to <%=pokemon.Name%></a>
 
     <!-- This form sends data to the back-end when it is submitted -->
     <form action="/api/pokemon/updateOnePokemon/<%=pokemon.Name%>" method="post">
