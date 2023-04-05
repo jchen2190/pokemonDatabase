@@ -12,9 +12,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
 
-const viewRouter = require('./routes/viewRouter');
+const viewRouter = require('./routes/client/viewRouter');
 app.use("/", viewRouter);
-const pokemonRouter = require("./routes/pokemonRouter");
+const pokemonRouter = require("./routes/api/pokemonRouter");
 app.use("/api/pokemon", pokemonRouter);
 
 const PORT = 8080;
