@@ -1,0 +1,46 @@
+# pokemonDatabase
+
+## General Info
+
+<br><br>
+## Setup
+
+### Node Installation
+Go to [Official Node.js Website](https://nodejs.org) and download the installer per your operating system.
+
+After node is installed, install the modules by running the following commands in the terminal to install package dependencies.
+<br><br>
+
+### MongoDB
+Use MongoDB database. Import file `allPokemon.json` in the folder `./models/` for original data.
+
+Add file `.env` and add the following code into your file:
+```
+MONGODB_URI="<Your MongoDB Connection String>"
+```
+Connect with your database deployment in MongoDB and insert your connection string into `<Your MongoDB Connection String>`.
+<br><br>
+
+### Run
+Type in the terminal to get dependencies:
+
+```
+npm install
+```
+Dependencies that will be installed:<br>
+- dotenv - v16.0.3
+- ejs - v3.1.9
+- express - v4.18.2
+- method-override - v3.0.0
+- mongoose - v7.0.3
+- nodemon - v2.0.22
+
+
+You can run the application by typing the following in the command line:
+```
+node index.js
+```
+The port will be on <b>localhost:8080</b>. Type in the URL to access content.<br><br>
+
+## Technologies
+Uses Javascript, NodeJS, MongoDB & EJS.
