@@ -22,7 +22,7 @@ Connect with your database deployment in MongoDB and insert your connection stri
 <br><br>
 
 ### Run
-Type in the terminal to get dependencies:
+Run the terminal to get dependencies:
 
 ```
 npm install
@@ -42,5 +42,8 @@ node index.js
 ```
 The port will be on <b>localhost:8080</b>. Type in the URL to access content.<br><br>
 
-## Technologies
-Uses Javascript, NodeJS, MongoDB & EJS.
+## Usage
+
+- Add new pokemon
+- Update pokemon
+- Delete pokemon
