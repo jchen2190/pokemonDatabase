@@ -5,7 +5,9 @@ const {
     renderAllPokemon,
     renderOnePokemonPage,
     renderCreatePokemonForm,
-    renderUpdatePokemonForm
+    renderUpdatePokemonForm,
+    renderSignUpForm,
+    renderLogInForm,
 } = require("../../controllers/client/viewController");
 
 // localhost:8080/...
