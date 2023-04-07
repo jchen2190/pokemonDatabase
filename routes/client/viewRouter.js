@@ -15,4 +15,7 @@ router.get("/oneMon/:name", renderOnePokemonPage);
 router.get("/createOneMon", renderCreatePokemonForm);
 router.get("/updateMon/:name", renderUpdatePokemonForm);
 
+router.get("/signUp", renderSignUpForm);
+router.get("/logIn", renderLogInForm);
+
 module.exports = router;

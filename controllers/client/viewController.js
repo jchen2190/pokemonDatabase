@@ -7,7 +7,6 @@ function getIndexPage(req, res) {
 async function renderAllPokemon(req, res) {
     try {
         let result = await Pokemon.find({});
-
         res.render("allMons", { pokemon: result })
     } catch (error) {
         let errorObj = {
@@ -22,7 +21,6 @@ async function renderAllPokemon(req, res) {
 async function renderOnePokemonPage(req, res) {
     try {
         let result = await Pokemon.findOne({ Name: req.params.name})
-
         res.render("oneMon", { pokemon: result})
     } catch (error) {
         let errorObj = {
@@ -61,10 +59,28 @@ async function renderUpdatePokemonForm(req, res) {
     }
 }
 
+async function renderSignUpForm(req, res) {
+    try {
+        res.render("signUp");
+    } catch (error) {
+        console.log(`renderSignUpForm error: ${error}`);
+    }
+}
+
+async function renderLogInForm(req, res) {
+    try {
+        res.render("logIn");
+    } catch (error) {
+        console.log(`renderLogInForm error: ${error}`)
+    }
+}
+
 module.exports = {
     getIndexPage,
     renderAllPokemon,
     renderOnePokemonPage,
     renderCreatePokemonForm,
-    renderUpdatePokemonForm
+    renderUpdatePokemonForm,
+    renderSignUpForm,
+    renderLogInForm
 }

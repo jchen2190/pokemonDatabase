@@ -37,22 +37,13 @@ async function getOnePokemon(req, res) {
 
 async function createOnePokemon(req, res) {
     try {
-        // Accepting the front-end form data from the client to generate the document
         let newPokemon = {
             PokedexNo: req.body.PokedexNo,
             Name: req.body.Name,
             Type: req.body.Type,
             Moves: req.body.Moves.split(", "),
         }
-
-        // post the new document to the Pokemon collection
         await Pokemon.create(newPokemon);
-
-        // don't want client to see json
-        // res.json({
-        //     message: "success",
-        //     payload: newPokemon
-        // })
 
         res.redirect(`/oneMon/${newPokemon.Name}`)
     } catch (error) {
@@ -68,11 +59,6 @@ async function createOnePokemon(req, res) {
 async function deleteOnePokemon(req, res) {
     try {
         await Pokemon.deleteOne({ Name: req.params.name })
-
-        // res.json({
-        //     message: "success",
-        //     payload: req.params.name
-        // })
 
         res.redirect("/allMons");
     } catch (error) {
@@ -93,17 +79,11 @@ async function updateOnePokemon(req, res) {
             Type: req.body.Type,
             Moves: req.body.Moves.split(", "),
         }
-
         await Pokemon.updateOne(
             { Name: req.params.name},
             { $set: updatedPokemon },
             { upsert: true }
         )
-
-        // res.json({
-        //     message: "success",
-        //     payload: updatedPokemon
-        // });
 
         res.redirect(`/oneMon/${updatedPokemon.Name}`);
     } catch (error) {
@@ -115,7 +95,6 @@ async function updateOnePokemon(req, res) {
         res.json(errorObj);
     }
 }
-
 
 module.exports = {
     getAllPokemon,
