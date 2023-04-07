@@ -28,9 +28,12 @@ Run the terminal to get dependencies:
 npm install
 ```
 Dependencies that will be installed:<br>
+- bcrypt - v5.1.0
+- cookie-parser - v1.4.6
 - dotenv - v16.0.3
 - ejs - v3.1.9
 - express - v4.18.2
+- express-session - v.1.17.3
 - method-override - v3.0.0
 - mongoose - v7.0.3
 - nodemon - v2.0.22
