@@ -1,6 +1,7 @@
 # pokemonDatabase
 
 ## General Info
+Uses MERN stack to create an application where users can login, check out and favorite their pokemon. 
 
 <br><br>
 ## Setup
@@ -14,15 +15,15 @@ After node is installed, install the modules by running the following commands i
 ### MongoDB
 Use MongoDB database. Import file `allPokemon.json` in the folder `./models/` for original data.
 
-Add file `.env` and add the following code into your file:
+Create file `.env` and add the following code into your file:
 ```
 MONGODB_URI="<Your MongoDB Connection String>"
 ```
-Connect with your database deployment in MongoDB and insert your connection string into `<Your MongoDB Connection String>`.
+`<Your MongoDB Connection String>` is where you connect with your MongoDB database deployment and insert your connection string info.
 <br><br>
 
 ### Run
-Run the terminal to get dependencies:
+Run the following in the terminal to get dependencies:
 
 ```
 npm install
