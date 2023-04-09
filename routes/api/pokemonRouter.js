@@ -7,7 +7,6 @@ const {
     deleteOnePokemon,
     updateOnePokemon
 } = require("../../controllers/api/pokemonController");
-// const { updateOne } = require("../../models/pokemonModel");
 
 // localhost:8080/api/pokemon/...
 router.get("/allPokemon", getAllPokemon);

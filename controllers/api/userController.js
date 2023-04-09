@@ -12,14 +12,14 @@ async function createUser(req, res) {
             favoritePokemon: []
         }
         await User.create(newUserObj);
-        res.redirect("/logIn"); // client
+        res.redirect("/logIn");
     } catch (error) {
         let errorObj = {
             message: "create user failure",
             payload: error
         }
-        console.log(errorObj); // server-side
-        res.json(errorObj); // client-side
+        console.log(errorObj);
+        res.json(errorObj);
     }
 }
 
