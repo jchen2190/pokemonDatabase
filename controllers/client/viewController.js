@@ -22,7 +22,16 @@ async function renderAllPokemon(req, res) {
 async function renderOnePokemonPage(req, res) {
     try {
         let result = await Pokemon.findOne({ Name: req.params.name})
-        res.render("oneMon", { pokemon: result})
+
+        let userFaves
+        if(req.session.isAuth) {
+            let currentUser = await User.findOne({username: req.session.user.username});
+            userFaves = currentUser.favoritePokemon
+        } else {
+            userFaves = []
+        }
+
+        res.render("oneMon", { pokemon: result, loggedIn: req.session.isAuth, userFaves: userFaves})
     } catch (error) {
         let errorObj = {
             message: "render one pokemon failure",
