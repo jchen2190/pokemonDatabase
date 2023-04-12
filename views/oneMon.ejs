@@ -20,6 +20,14 @@
         </ul>
 
         <a href="/updateMon/<%=pokemon.Name%>">Update this pokemon</a>
+        <br>
+        <% if(loggedIn && !userFaves.includes(pokemon._id)) { %>
+            <form action="/api/user/addFavoritePokemon?_method=PUT" method="post">
+                <input type="hidden" name="pokeId" value="<%=pokemon._id%>">
+                <input type="submit" name="_method" value="Add to Favorite Pokemon">
+            </form>
+        <% } %> 
+        <br>
 
         <form action="/api/pokemon/deleteOnePokemon/<%= pokemon.Name %>?_method=DELETE" method="post"> 
             <input type="submit" name="_method" value="DELETE THIS POKEMON">

@@ -1,7 +1,7 @@
 # pokemonDatabase
 
 ## General Info
-Uses MERN stack to create an application where users can login, check out and favorite their pokemon. 
+Created an application where users can login, check out and favorite their pokemon. 
 
 <br><br>
 ## Setup

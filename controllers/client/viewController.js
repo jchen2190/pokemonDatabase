@@ -1,4 +1,5 @@
 const Pokemon = require("../../models/pokemonModel");
+const User = require("../../models/userModel");
 
 function getIndexPage(req, res) {
     res.render("index");
@@ -75,6 +76,39 @@ async function renderLogInForm(req, res) {
     }
 }
 
+async function renderUserPage(req, res){
+    try {
+        if(req.session.isAuth){
+            let currentUser = await User.findOne({ _id: req.session.user.id });
+            let pokeNameList = []
+            for(let i = 0; i < currentUser.favoritePokemon.length; i++){
+                let onePokemon = await Pokemon.findOne({_id: currentUser.favoritePokemon[i]});
+
+                pokeNameList.push(onePokemon.Name);
+            }
+            res.render("user", { user: currentUser, favoritePokemon: pokeNameList });
+        } else {
+            res.redirect("/logIn");
+        }
+    } catch (error) {
+        console.log(`renderUserPage error: ${error}`);
+    }
+}
+async function logOutUser(req, res) {
+    try {
+        res.clearCookie("connect.sid", {
+            path: "/",
+            httpOnly: true,
+            secure: false,
+            maxAge: null
+        })
+        req.session.destroy();
+        res.redirect("/logIn");
+    } catch (error) {
+        console.log(`logOutUser error: ${error}`);
+    }
+}
+
 module.exports = {
     getIndexPage,
     renderAllPokemon,
@@ -82,5 +116,7 @@ module.exports = {
     renderCreatePokemonForm,
     renderUpdatePokemonForm,
     renderSignUpForm,
-    renderLogInForm
+    renderLogInForm,
+    renderUserPage,
+    logOutUser
 }

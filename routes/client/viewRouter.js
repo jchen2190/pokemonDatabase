@@ -8,6 +8,8 @@ const {
     renderUpdatePokemonForm,
     renderSignUpForm,
     renderLogInForm,
+    renderUserPage,
+    logOutUser
 } = require("../../controllers/client/viewController");
 
 // localhost:8080/...
@@ -19,5 +21,7 @@ router.get("/updateMon/:name", renderUpdatePokemonForm);
 
 router.get("/signUp", renderSignUpForm);
 router.get("/logIn", renderLogInForm);
+router.get("/user", renderUserPage);
+router.get("/logout", logOutUser);
 
 module.exports = router;
